@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/app_strings.dart';
 import 'package:task_manager/core/colors.dart';
+import 'package:task_manager/presentation/feature/home_page/widget/app_logo.dart';
+import 'package:task_manager/presentation/feature/home_page/widget/stat_card.dart';
+import 'package:task_manager/presentation/feature/home_page/widget/filter_button.dart';
+import 'package:task_manager/presentation/feature/home_page/widget/task_card.dart';
+import 'package:task_manager/core/task.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,19 +23,8 @@ class _HomePageState extends State<HomePage> {
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(children: [
-            Container(height: 24, width: 24,
-              decoration: BoxDecoration(color: AppColors.primary,
-                  borderRadius: .circular(8),
-                  boxShadow: [
-                    BoxShadow(
-                        color: AppColors.primary.withValues(alpha: 0.95)
-                    )
-                  ]
-              ),
-              child: Icon(Icons.check, color: AppColors.primaryLight,
-                size: 13,),
+            AppLogo(),
 
-            ),
             SizedBox(width: 4,),
             Text(AppStrings.appName, style: TextStyle(
               fontSize: 14,
@@ -60,6 +54,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Padding(
+
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,50 +71,41 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
               ),),
-            Container(
-
-              width: 120,
-              decoration: BoxDecoration(color: AppColors.surface,
-                  borderRadius: .circular(24),
-                  boxShadow: [
-                    BoxShadow(
-                        color: AppColors.primary.withValues(alpha: 0.95)
-                    )
-                  ]
-              ),
-
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.mail_lock, color: AppColors.scaffoldBackground,),
-                    SizedBox(height: 4,),
-                    Text("5",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
-                      ),),
-                    SizedBox(height: 4,),
-                    Text(AppStrings.totalLabel,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textMuted,
-                      ),),
-
-
-
-                  ],
-                ),
-              ),
+            Row(
+              spacing: 10,
+              children: [
+                Expanded(child: StatCard(icon: Icons.format_align_center, iconColor: AppColors.primary, count: 0, label: 'Total')),
+                Expanded(child: StatCard(icon: Icons.schedule, iconColor: AppColors.warning, count: 0, label: 'Pending')),
+                Expanded(child: StatCard(icon: Icons.check_circle, iconColor: AppColors.success, count: 0, label: 'Completed')),
+              ],
             ),
+            Row(
+              spacing: 10,
+              children: [
+                Expanded(child: FilterButton(icon: Icons.check, label: 'All', isSelected: true, onTap: (){},)),
+                Expanded(child: FilterButton(icon: Icons.check, label: 'Pending', isSelected: false, onTap: (){},)),
+                Expanded(child: FilterButton(icon: Icons.check, label: 'Completed', isSelected: false, onTap: (){},)),
+              ],
+            ),
+            SizedBox(height: 8,),
+            TaskCard(task: Task(title: 'Finish onboarding mockups',
+              description: 'Final term will be started soon be careful with the deadlines',
+              dueDate: 'nov 16',
+              priority: 'High',
+              createdData: 'nov 2',
+            ), onTap: (){}, onStatusTap: () {},),
+
 
 
           ],
         ),
+      ),
+
+      backgroundColor: AppColors.scaffoldBackground,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: AppColors.primary,
+        child: Icon(Icons.add, color: AppColors.primaryLight,),
       ),
 
 
