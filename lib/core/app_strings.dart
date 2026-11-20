@@ -77,8 +77,7 @@ class AppStrings {
   static const String detailCreatedDate = "Oct 12, 2026";
 
   static const String descriptionHeader = "DESCRIPTION";
-  static const String detailDescriptionBody =
-      "Compile Q3 metrics across acquisition, retention, and revenue, then send the summary deck to the finance team ahead of Friday's leadership review.";
+  static const String detailDescriptionBody = "Compile Q3 metrics across acquisition, retention, and revenue, then send the summary deck to the finance team ahead of Friday's leadership review.";
 
   static const String markAsCompletedButton = "Mark as Completed";
   static const String deleteTaskButton = "Delete Task";

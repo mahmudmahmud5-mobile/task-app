@@ -3,6 +3,7 @@ import 'package:task_manager/core/app_strings.dart';
 import 'package:task_manager/core/colors.dart';
 import 'package:task_manager/presentation/feature/home_page/home_page.dart';
 import 'dart:async';
+import 'package:task_manager/presentation/add edit task/widget/add_edit_task.dart';
 
 
 
@@ -30,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _goToHome(){
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePage()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) =>AddEditTask()));
   }
 
 

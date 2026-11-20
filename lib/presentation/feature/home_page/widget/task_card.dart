@@ -33,7 +33,7 @@ class TaskCard extends StatelessWidget {
               color: AppColors.primaryLight,
               borderRadius: .circular(18),
             ),
-            child: Icon(Icons.check, color: AppColors.danger, size: 24,),),
+            child: Icon(Icons.flag_circle, color: AppColors.danger, size: 24,),),
           SizedBox(width: 8,),
           Expanded(
             child: Column(
@@ -49,7 +49,7 @@ class TaskCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: .w800,
-                    color:  AppColors.textPrimary,
+                    color: task.isCompleted? AppColors.textMuted : AppColors.textPrimary,
                     decoration: task.isCompleted? TextDecoration.lineThrough : TextDecoration.none,
 
                   ),),
@@ -72,11 +72,11 @@ class TaskCard extends StatelessWidget {
             decoration: BoxDecoration(color: AppColors.primaryLight,
                 borderRadius: .circular(100)),
             child: Text(
-              task.isCompleted? AppStrings.badgePending : AppStrings.statusBadgeDone,
+              task.isCompleted? AppStrings.statusBadgeDone : AppStrings.statusBadgePending,
               style: TextStyle(
                 fontSize: 12,
                 fontWeight: .w800,
-                color: task.isCompleted? AppColors.danger : AppColors.success,
+                color: task.isCompleted? AppColors.success : AppColors.primary,
               ),
             ),
           )

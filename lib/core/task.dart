@@ -19,29 +19,40 @@ class Task {
 
 }
 
-List<Task> x=[
+List<Task> demoTasks=[
   Task(title: 'Finish onboarding mockups',
       description: 'Final term',
       dueDate: 'nov 16',
       priority: 'High',
       createdData: 'nov 2',
+      isCompleted: true
       ),
   Task(title: '1st tuition TODAY',
     description: 'Very sharp student and also give my salary on time',
     dueDate: 'nov 16',
     priority: 'Medium',
     createdData: 'nov 2',
+    isCompleted: false
   ),
   Task(title: '2nd tuition TODAY',
     description: 'Less important but still important',
     dueDate: 'nov 16',
     priority: 'low',
     createdData: 'nov 2',
+      isCompleted: false
   ),
   Task(title: '3rd tuition TODAY',
     description: 'Less Less important but still important',
     dueDate: 'nov 16',
     priority: 'low',
     createdData: 'nov 2',
+      isCompleted: false
+  ),
+  Task(title: '4th tuition TODAY',
+      description: 'Less Less important but still important',
+      dueDate: 'nov 16',
+      priority: 'low',
+      createdData: 'nov 2',
+      isCompleted: true
   ),
 ];
