@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:task_manager/core/app_strings.dart';
 import 'package:task_manager/core/colors.dart';
+import 'package:task_manager/presentation/add%20edit%20task/widget/add_edit_task.dart';
 import 'package:task_manager/presentation/feature/home_page/widget/app_logo.dart';
 import 'package:task_manager/presentation/feature/home_page/widget/stat_card.dart';
 import 'package:task_manager/presentation/feature/home_page/widget/filter_button.dart';
 import 'package:task_manager/presentation/feature/home_page/widget/task_card.dart';
 import 'package:task_manager/core/task.dart';
 import 'package:task_manager/presentation/feature/home_page/widget/empty_task.dart';
+import 'package:task_manager/presentation/feature/task%20details/task_details.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,7 +54,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _goToAddTask(){}
-  void _goToDetails(){}
+  void _goToDetails(){
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> TaskDetails()));
+  }
 
 
 
@@ -186,7 +190,9 @@ class _HomePageState extends State<HomePage> {
 
       backgroundColor: AppColors.scaffoldBackground,
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> AddEditTask()));
+        },
         backgroundColor: AppColors.primary,
         child: Icon(Icons.add, color: AppColors.primaryLight,),
       ),

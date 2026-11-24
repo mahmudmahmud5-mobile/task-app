@@ -70,6 +70,7 @@ class AppStrings {
   static const String badgeHighPriority = "High priority";
   static const String badgePending = "Pending";
   static const String detailTaskTitle = "Submit quarterly report";
+  static const String taskDetails = "Task Details";
 
   static const String labelDueDate = "Due date";
   static const String detailDueDate = "Oct 30, 2026";

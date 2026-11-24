@@ -11,7 +11,7 @@ class AppColors {
   // Backgrounds & Surfaces
   static const Color scaffoldBackground = Color(0xFFEDEDF4); // Main screen background
   static const Color surface = Color(0xFFFFFFFF);            // Cards, TextFields, Unselected pills
-  static const Color toggleBackground = Color(0xFFEEEEF2);   // Status segmented control container
+  static const Color toggleBackground = Color(0xFFE5E5E6);   // Status segmented control container
 
   // Typography / Text Colors
   static const Color textPrimary = Color(0xFF14141F);    // Main headings, Task titles, App title
@@ -20,6 +20,11 @@ class AppColors {
 
   // Borders & Dividers
   static const Color border = Color(0xFFE4E5EC);         // Input borders, Unselected priority pills, Card outlines
+  static const Color activeTabBg = Color(0xFFFFFFFF);
+  static const Color trackBg = Color(0xFFF0F1F3);
+  static const Color activeText = Color(0xFF2D2F33);
+  static const Color inactiveText = Color(0xFFA0A4AB);
+  static const Color shadowColor = Color(0x1A000000);
 
   // Status & Priority Accents
   // High Priority / Delete / Overdue

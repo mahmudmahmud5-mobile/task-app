@@ -3,6 +3,8 @@ import 'package:task_manager/presentation/add edit task/widget/field_label.dart'
 import 'package:task_manager/core/colors.dart';
 import 'package:task_manager/core/app_strings.dart';
 import 'package:task_manager/presentation/add%20edit%20task/widget/priority_tab.dart';
+import 'package:task_manager/presentation/add%20edit%20task/widget/save_cancel_button.dart';
+import 'package:task_manager/presentation/add%20edit%20task/widget/status_tab.dart';
 import 'package:task_manager/presentation/add%20edit%20task/widget/task_field.dart';
 import 'package:task_manager/presentation/core/square_icon_button.dart';
 
@@ -85,6 +87,47 @@ class _AddEditTaskState extends State<AddEditTask> {
               ],
             ),
             FieldLabel(text: AppStrings.fieldStatus),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.trackBg,
+              ),
+              child: Row(
+                spacing: 15,
+                children: [
+                  Expanded(
+                    child: StatusTab(
+                      label: AppStrings.pendingLabel,
+                      isSelected: true,
+                      onTop: (){},
+                    ),
+                  ),
+                  Expanded(
+                    child: StatusTab(
+                      label: AppStrings.completedLabel,
+                      isSelected: false,
+                      onTop: (){},
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 180,),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SaveCancelButton(
+                  text: AppStrings.saveTaskButton,
+                  textColor: AppColors.primaryLight,
+                  backgroundColor: AppColors.primary,
+                ),
+                SaveCancelButton(
+                  text: AppStrings.cancelButton,
+                  textColor: AppColors.textPrimary,
+                  backgroundColor: AppColors.primaryLight,
+                ),
+              ],
+            )
 
           ],
         ),

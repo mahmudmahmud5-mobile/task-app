@@ -24,8 +24,8 @@ class TaskField extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.surface,
-        border: _outLine(AppColors.border),
-        enabledBorder: _outLine(AppColors.primaryBorder),
+        border: _outLine(AppColors.primaryLight),
+        enabledBorder: _outLine(borderColor),
         focusedBorder: _outLine(AppColors.primary),
 
         hintText: hintText,
